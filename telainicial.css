@@ -1,0 +1,251 @@
+/* Estilos para o Cabeçalho (Header) e Menu (Links) */
+header {
+    background-color: #333; 
+    padding: 15px 0;
+}
+
+nav ul {
+   
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    /* Mantém os itens lado a lado em telas grandes */
+    display: flex; 
+    /* Distribui o espaço entre os itens */
+    justify-content: space-around; 
+}/* Media Query para telas menores que 768 pixels (celulares e tablets) */
+@media (max-width: 768px) {
+    
+    /* Ajusta o padding do contêiner para telas pequenas */
+    .container {
+        /* Reduz o padding lateral para 15px (de 40px), mantendo um respiro */
+        padding: 0 15px; 
+    }
+
+    /* Faz os links se empilharem verticalmente */
+    nav ul {
+        flex-direction: column; 
+        align-items: flex-start; 
+        justify-content: flex-start; 
+    }
+
+    /* ... (restante dos estilos para nav ul li e nav a) ... */
+    nav ul li {
+        width: 100%;
+        text-align: left; 
+    }
+    
+    nav a {
+        padding: 12px 15px; 
+        border-bottom: 1px solid #444; 
+    }
+
+    /* Note que o header não precisa mais do padding: 0, pois o .container cuida do conteúdo */
+}
+
+/* Restante dos estilos de links e conteúdo */
+nav a {
+    text-decoration: none; 
+    color: white; 
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555; 
+}
+
+#conteudo-principal {
+    min-height: 500px; 
+    padding: 30px;
+    margin-top: 20px; 
+    background-color: white;
+    border: 10px solid #ddd;
+    border-radius: 10px;
+    text-align: center; 
+}
+
+/* Media Query para telas menores que 768 pixels (celulares e tablets) */
+@media (max-width: 768px) {
+    
+    /* Faz os links se empilharem verticalmente */
+    nav ul {
+        flex-direction: column; 
+        /* Alinha os links à esquerda quando empilhados */
+        align-items: flex-start; 
+        /* Remove o espaçamento horizontal para telas pequenas */
+        justify-content: flex-start; 
+    }
+
+    /* Faz cada item da lista ocupar 100% da largura do menu */
+    nav ul li {
+        width: 100%;
+        text-align: left; /* Garante que o texto comece à esquerda */
+    }
+    
+    /* Aumenta a área clicável no celular e remove o padding horizontal desnecessário */
+    nav a {
+        padding: 10px 15px; 
+        border-bottom: 1px solid #444; /* Adiciona uma linha divisória para melhor visualização */
+    }
+
+    /* O padding horizontal do header pode ser reduzido em telas pequenas */
+    header {
+        padding: 0;
+       
+    }
+}
+
+/* RESET CSS BÁSICO: Remove margens e paddings padrão do navegador */
+body {
+    margin: 0;
+    padding: 0;
+}
+/* Seletor do contêiner, assumindo que ele está dentro do header */
+.container {
+    /* Mantenha a largura máxima se for o caso, mas zere o padding horizontal */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ou, se o problema for apenas para o cabeçalho: */
+header .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+hr {
+    display: none;
+}
+
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS PARA A CALCULADORA DE IMC */
+/* ======================================================= */
+
+/* 1. ESTILO DO CONTÊINER PRINCIPAL DA CALCULADORA (PARA A BORDA) */
+.saude-container {
+    border: 3px solid #007BFF; /* Borda azul ao redor do conteúdo */
+    padding: 2px; /* Espaço interno para o conteúdo não tocar a borda */
+    border-radius: 10px; /* Cantos arredondados */
+    max-width: 450px; /* Limita a largura do formulário */
+    /* Garante que o texto dentro dele seja centralizado, se aplicável */
+    text-align: center;
+    margin: 20px auto; /* Centraliza o contêiner dentro da #conteudo-principal */
+}
+
+/* 2. ESTILO DO FORMULÁRIO (PARA EMPILHAR PESO, ALTURA E BOTÃO) */
+.imc-form {
+    display: flex;
+    flex-direction: column; /* Empilha os filhos verticalmente */
+    gap: 10px; /* Espaço entre os grupos de input */
+    padding: 5px;
+}
+
+/* 3. ESTILO PARA AGRUPAR RÓTULO E CAMPO DE TEXTO (LADO A LADO) */
+.input-group {
+    display: flex;
+    /* Distribui o rótulo e o input nas extremidades opostas */
+    justify-content: space-between; 
+    align-items: center; /* Alinha verticalmente no meio */
+    text-align: center; /* Garante que o texto do label não seja centralizado */
+}
+
+.input-group label {
+    font-weight: bold;
+    /* Ocupa uma porcentagem da largura para o rótulo */
+    flex-basis: 35%; 
+}
+
+.input-group input {
+    /* Ocupa a porcentagem restante para o campo de texto */
+    flex-basis: 60%; 
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* 4. ESTILO DO BOTÃO (ELE JÁ FICA ABAIXO DEVIDO ao .imc-form) */
+#calcular-imc {
+    padding: 10px 20px;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#calcular-imc:hover {
+    background-color: #218838;
+}
+
+#resultado-imc {
+    
+    margin-top: 0px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+footer {
+    background-color: #222; 
+    color: #fff;            
+    padding: 20px 0;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    padding: 0px;
+}
+footer p {
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding: 0px;
+}
+
+/* Agrupa as regras de centralização e largura máxima */
+.pcdt-conteudo h1,
+.pcdt-conteudo h2,
+.pcdt-conteudo p {
+    max-width: 450px;
+    /* Centraliza o BLOCO horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. ESTILIZAÇÃO DO TÍTULO PRINCIPAL (h1) */
+.pcdt-conteudo h1 {
+    margin-top: 50px;
+    margin-bottom: 0px; 
+    color: #75b81f; 
+    font-size: 2.2em;
+    /* Manter 'center' para o título principal geralmente é melhor */
+    text-align: center; 
+    padding-bottom: 10px;
+}
+
+/* 3. ESTILIZAÇÃO DOS SUBTÍTULOS (h2) */
+.pcdt-conteudo h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #75b81f; 
+    font-size: 1.5em;
+    /* Mantido 'center' para subtítulos */
+    text-align: center; 
+}
+
+.pcdt-conteudo p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #012703; 
+    font-size: 1.0em;
+    
+    /*  ALTERADO: Texto justificado para parecer um documento */
+    text-align: justify;
+    
+    /* Adicional: Para evitar quebras feias no justificado, você pode adicionar: */
+    hyphens: auto; 
+}

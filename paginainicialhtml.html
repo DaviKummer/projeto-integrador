@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Login</title>
+
+    <style>
+
+.login{
+width: 350px;
+height: 400px;
+background-color: beige;
+margin-top: 10%;
+border-radius: 5px;
+text-align: center;
+margin-left: 36%;
+}
+body{
+background-color: darkgray;
+}
+input{
+padding: 10px;
+font-size: 20px;
+width: 90%;
+margin-bottom: 8px;
+}
+
+label{
+padding: 15px;
+font-size: 20px;
+}
+
+.botao{
+margin-top: 20px;
+width: 97%;
+cursor: pointer;
+background-color: brown;
+color: white;
+}
+
+.botao:hover{
+background-color: green;
+}
+
+h2{
+padding: 23.5px;
+}
+
+/* NOVO ESTILO NECESSÁRIO PARA A MENSAGEM DE ERRO */
+#erro-login {
+    color: red;
+    font-weight: bold;
+    /* Mantenha apenas 'display: none;' para iniciar oculto */
+    display: none;
+    margin-bottom: 5px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* NOVO ESTILO PARA O LINK DE RECUPERAÇÃO */
+.link-recuperacao {
+    display: block; /* Garante que o link ocupe sua própria linha */
+    text-align: right; /* Alinha o texto à direita do contêiner */
+    font-size: 14px;
+    margin-right: 18px; /* Pequena margem para alinhar com o input */
+    margin-bottom: 10px; /* Espaço antes do botão */
+    text-decoration: none;
+    color: #333; /* Cor do link */
+}
+
+.link-recuperacao:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+</style>
+
+</head>
+<body>
+    <div class="login">
+        <h2>LOGIN</h2>
+        <form method="POST" action="paginainicialphp.php"> 
+            
+            <span id="erro-login">Usuário ou senha incorretos</span>
+
+            <label for="email">Email:</label><br>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                onfocus="ocultarErro()" 
+            ><br>
+
+            <label for="usuario">Usuário:</label><br>
+            <input 
+                type="text" 
+                id="usuario" 
+                name="usuario" 
+                required
+                onfocus="ocultarErro()" 
+            ><br>
+
+            <label for="senha">Senha:</label><br>
+            <input 
+                type="password" 
+                id="senha" 
+                name="senha" 
+                required
+                onfocus="ocultarErro()" 
+            ><br>
+            
+            <a href="recuperacao.html" class="link-recuperacao">
+                Esqueci usuário ou senha
+            </a>
+            <input class="botao" type="submit" value="Entrar">
+        </form>
+        
+        <a href="cadastro.html" class="cadastro.html">
+            <h3>Ainda não é cadastrado? Registre-se!</h3>
+        </a>
+    </div>
+
+    <script>
+        // Função para mostrar a mensagem de erro se o parâmetro 'erro=login' estiver na URL
+        document.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var erro = urlParams.get('erro');
+            var elementoErro = document.getElementById('erro-login');
+
+            if (erro === 'login' && elementoErro) {
+                // Torna a mensagem visível
+                elementoErro.style.display = 'block'; 
+            }
+        });
+
+        // Função chamada pelo onfocus dos campos de input para ocultar a mensagem
+        function ocultarErro() {
+            var elementoErro = document.getElementById('erro-login');
+            if (elementoErro) {
+                elementoErro.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

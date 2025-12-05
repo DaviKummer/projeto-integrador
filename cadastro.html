@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Login</title>
+
+    <style>
+.login{
+width: 350px;
+/* Aumentei a altura para acomodar o novo campo */
+height: 450px; 
+background-color: beige;
+margin-top: 10%;
+border-radius: 5px;
+text-align: center;
+/* Centralizei a div 'login' para telas maiores */
+margin-left: auto;
+margin-right: auto;
+}
+body{
+background-color: darkgray;
+}
+input{
+padding: 10px;
+font-size: 20px;
+width: 90%;
+margin-bottom: 8px;
+}
+
+label{
+/* Reduzi um pouco o padding para melhor espaçamento vertical */
+padding: 5px; 
+font-size: 20px;
+/* Garante que o label comece em uma nova linha */
+display: block; 
+}
+
+.botao{
+margin-top: 15px; /* Ajustei a margem superior */
+width: 97%;
+cursor: pointer;
+background-color: brown;
+color: white;
+}
+
+.botao:hover{
+background-color: green;
+}
+
+h2{
+padding: 23.5px;
+}
+</style>
+
+</head>
+<body>
+    
+<div class="login">
+    <h2>CADASTRO DE LOGIN</h2>
+    <form method="POST" action="cadastra.php">
+        
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br>
+
+
+        <label for="confirmaSenha">Confirme a Senha:</label>
+        <input type="password" id="confirmaSenha" name="confirmaSenha" required><br>
+
+        <input class="botao" type="submit" value="Cadastrar">
+
+    </form>
+</div>
+</body>
+</html>

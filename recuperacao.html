@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Acesso</title> 
+
+    <style>
+        /* ESTILOS COPIADOS DA SUA PÁGINA DE LOGIN PARA MANTER A SEMELHANÇA VISUAL */
+
+        body {
+            background-color: darkgray;
+            /* Garante que o body ocupa a altura total para centralizar o bloco .login */
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Ajuste de altura para acomodar apenas um campo de input e manter a proporção */
+        .login { 
+            width: 350px;
+            height: 280px; /* Reduzida para ser proporcional ao conteúdo */
+            background-color: beige;
+            border-radius: 5px;
+            text-align: center;
+            /* As margens automáticas e flexbox centralizam o bloco */
+        }
+        
+        input {
+            padding: 10px;
+            font-size: 20px;
+            width: 90%;
+            margin-bottom: 8px;
+        }
+
+        label {
+            padding: 15px;
+            font-size: 20px;
+            display: block; /* Garante que a label ocupe uma linha para alinhamento */
+            text-align: center;
+        }
+
+        .botao {
+            margin-top: 20px;
+            width: 97%;
+            cursor: pointer;
+            background-color: brown;
+            color: white;
+            font-size: 20px; /* Mantém o tamanho do texto do botão */
+        }
+
+        .botao:hover {
+            background-color: green;
+        }
+
+        h2 {
+            padding: 23.5px;
+            margin: 0;
+        }
+
+        /* Estilo para a instrução de texto */
+        .instrucao {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="login">
+        
+        <h2>Esqueci meu Usuário ou Senha</h2>
+
+        <form method="POST" action="processa_recuperacao.php">
+            
+            <p class="instrucao">Adicione seu Email para recuperação:</p>
+
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Seu e-mail de cadastro"
+                required
+            ><br>
+
+            <input class="botao" type="submit" value="Enviar">
+
+        </form>
+    </div>
+</body>
+</html>
